@@ -31,6 +31,7 @@ export const deleteUser = async (req, res, next) => {
     }
 }
 
+
 export const getUser = async (req, res, next) => {
     try{
         const user = await User.findById(req.params.id)
@@ -43,7 +44,7 @@ export const getUser = async (req, res, next) => {
 
 export const getUsers = async (req, res, next) => {
     try{
-        const users = await User.find()
+        const users = await User.find() 
         res.status(200).json(users)
     }catch(err){
         next(err)
